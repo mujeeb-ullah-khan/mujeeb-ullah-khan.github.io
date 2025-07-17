@@ -1,0 +1,68 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+}
+.dark {
+  --bg: #1f1f1f;
+  --text: #f4f4f4;
+}
+header {
+  background: #3498db;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.card {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+  width: 200px;
+}
+.contact {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+.contact-info {
+  max-width: 400px;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+.profile-pic img {
+  border-radius: 50%;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ddd;
+}
+.contact-link {
+  display: block;
+  text-align: center;
+  margin: 2rem;
+  font-weight: bold;
+  color: #3498db;
+}
