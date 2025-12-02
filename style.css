@@ -1,37 +1,142 @@
+/* Global ------------------------------------------------------------ */
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
-  color: #333;
+  font-family: "Inter", sans-serif;
+  color: #e7e7e7;
+  background: #0b0e16;
+  overflow-x: hidden;
 }
-header {
-  background: #2c3e50;
-  color: white;
-  padding: 2rem;
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+.section {
+  width: 80%;
+  margin: 70px auto;
+  padding: 20px;
+}
+
+/* Tech Background --------------------------------------------------- */
+
+.tech-grid {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f1628 0%, #070b14 100%);
+  z-index: -2;
+}
+
+.tech-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#ffffff08 1px, transparent 1px),
+                    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridmove 20s linear infinite;
+}
+
+@keyframes gridmove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* Header ------------------------------------------------------------ */
+
+.header {
   text-align: center;
+  padding: 60px 20px;
 }
-nav a {
-  margin: 0 1rem;
-  color: white;
+
+.name {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #9aa0b4;
+}
+
+.nav {
+  margin-top: 25px;
+}
+
+.nav a {
+  margin: 0 15px;
+  color: #a9b0c9;
   text-decoration: none;
+  font-weight: 500;
 }
-section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+
+.nav a:hover {
+  color: #fff;
 }
-.project {
-  background: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* Project Cards ----------------------------------------------------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
+
+.project-card {
+  background: #121824;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #1f2635;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #23314a;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #1c9cff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: #42adff;
+}
+
+/* Research Cards ---------------------------------------------------- */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.research-card {
+  background: #161d2b;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #242c3f;
+  transition: transform 0.2s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer ------------------------------------------------------------ */
+
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #ecf0f1;
-  color: #777;
+  padding: 20px;
+  margin-top: 50px;
+  color: #8c94ab;
 }
