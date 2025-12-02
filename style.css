@@ -28,20 +28,34 @@ h1, h2, h3 {
   z-index: -2;
 }
 
+.tech-grid {
+  position: fixed;
+  inset: 0;
+
+  /* Blue tech glow instead of black */
+  background: radial-gradient(
+      circle at center,
+      rgba(40, 80, 150, 0.35) 0%,
+      rgba(10, 20, 40, 0.95) 100%
+  );
+
+  z-index: -2;
+}
+
 .tech-grid::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(#ffffff08 1px, transparent 1px),
-                    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridmove 20s linear infinite;
+
+  /* Brighter grid lines */
+  background-image: 
+     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+
+  background-size: 70px 70px;
+  animation: gridmove 25s linear infinite;
 }
 
-@keyframes gridmove {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(60px); }
-}
 
 /* Header ------------------------------------------------------------ */
 
