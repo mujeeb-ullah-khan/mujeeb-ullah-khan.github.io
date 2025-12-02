@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +6,16 @@
   <title>Mujeeb Ullah Khan | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Mujeeb Ullah Khan</h1>
-    <p>Information Systems Student | Researcher | Web Developer | MIT Expert</p>
-    <nav>
+  <!-- Background Tech Grid -->
+  <div class="tech-grid"></div>
+
+  <header class="header">
+    <h1 class="name">Mujeeb Ullah Khan</h1>
+    <p class="subtitle">Information Systems Student • Researcher • Web Developer • MIT Expert</p>
+
+    <nav class="nav">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
@@ -19,110 +23,107 @@
     </nav>
   </header>
 
-  <section id="about">
+  <!-- About -->
+  <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I am a motivated Information Systems student with hands-on experience in HTML, CSS, JavaScript, PHP, Python, MySQL, React, and Node.js. I’ve built web projects, interactive 3D applications, and AI tools like chatbots, while also contributing to peer-reviewed research. With interests in cybersecurity, IoT, and information systems management, and as an MIT App Inventor expert, I enjoy solving problems and creating efficient, user-friendly digital solutions.</p>
+    <p>
+      I’m an Information Systems student exploring web development, AI tools, cybersecurity, and IoT.  
+      I work with HTML, CSS, JavaScript, PHP, Python, React, Node.js, and MySQL.  
+      I’ve built practical tools, 3D UI projects, chatbots, and contributed to peer-reviewed research.  
+      I enjoy taking ideas from scratch to something people can actually use.
+    </p>
   </section>
 
-  <section id="projects">
-  <h2>Projects</h2>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
 
-    <div class="project">
-    <h3>My First Website</h3>
-    <p>My First Successful Website.</p>
-    <p><a href="https://mujeeb-ullah-khan.github.io/Own-Website/" target="_blank">
-      Open My First Website
-    </a></p>
-  </div>
+    <div class="project-grid">
 
-<div class="project">
-    <h3>3D Calculator</h3>
-    <p>A modern, interactive calculator built with HTML, CSS, and JavaScript that features a sleek 3D design effect for buttons and layout.
-    HTML5 → for structure and CSS3 (with 3D transforms & shadows) → for styling and 3D effect</p>
-    <p><a href="https://mujeeb-ullah-khan.github.io/3D-Calculator/" target="_blank">
-      Open 3D Calculator
-    </a></p>
-  </div>
+      <div class="project-card">
+        <h3>My First Website</h3>
+        <p>My first successful website project.</p>
+        <a class="btn" href="https://mujeeb-ullah-khan.github.io/Own-Website/" target="_blank">Open Project</a>
+      </div>
 
-    <div class="project">
-    <h3>AI Chat Bot</h3>
-    <p> An AI-powered chatbot built with **React (frontend)** and **Node.js/Express (backend)**.  
-     It connects with Hugging Face / OpenAI APIs to generate conversational responses.  </p>
-    <p><a href="https://github.com/mujeeb-ullah-khan/ai-chatbot" target="_blank">
-      View On GitHub
-    </a></p>
-  </div>
+      <div class="project-card">
+        <h3>3D Calculator</h3>
+        <p>A 3D-styled calculator using HTML, CSS, and JavaScript.</p>
+        <a class="btn" href="https://mujeeb-ullah-khan.github.io/3D-Calculator/" target="_blank">Open Project</a>
+      </div>
 
-    
-<div class="project">
-    <h3>Weather App</h3>
-    <p>A simple JavaScript-based weather application that fetches real-time weather data using OpenWeatherMap API.
-    Displays temperature, humidity, weather condition, and location. Built with HTML, CSS, and vanilla JavaScript.</p>
-    <p><a href="https://mujeeb-ullah-khan.github.io/weather-App/" target="_blank">
-      Open Weather App
-    </a></p>
-  </div>
+      <div class="project-card">
+        <h3>AI Chat Bot</h3>
+        <p>A react + node chatbot connected to AI APIs (OpenAI / HF).</p>
+        <a class="btn" href="https://github.com/mujeeb-ullah-khan/ai-chatbot" target="_blank">View GitHub</a>
+      </div>
 
+      <div class="project-card">
+        <h3>Weather App</h3>
+        <p>Live weather app using OpenWeatherMap API.</p>
+        <a class="btn" href="https://mujeeb-ullah-khan.github.io/weather-App/" target="_blank">Open App</a>
+      </div>
 
-    
-  <div class="project">
-    <h3>Smart Student Planner</h3>
-    <p>A Simple Test for Student to Manage the Schedule.</p>
-    <p><a href="https://mujeeb-ullah-khan.github.io/SmartStudentPlannerEditable/" target="_blank">
-      Open Smart Student Planner
-    </a></p>
-  </div>
+      <div class="project-card">
+        <h3>Smart Student Planner</h3>
+        <p>A simple planner for managing student schedules.</p>
+        <a class="btn" href="https://mujeeb-ullah-khan.github.io/SmartStudentPlannerEditable/" target="_blank">Open Planner</a>
+      </div>
 
-  <div class="project">
-    <h3>Smart IoT Door Lock</h3>
-    <p>Arduino + RFID door lock project built with Python and serial communication interface.</p>
-    <p><a href="https://mujeeb-ullah-khan.github.io/SmartIoTDoorLock/" target="_blank">
-      Open Smart IoT Door Lock
-    </a></p>
-  </div>
+      <div class="project-card">
+        <h3>Smart IoT Door Lock</h3>
+        <p>Arduino RFID door lock with Python serial interface.</p>
+        <a class="btn" href="https://mujeeb-ullah-khan.github.io/SmartIoTDoorLock/" target="_blank">Open Project</a>
+      </div>
 
-  <div class="project">
-    <h3>Cybersecurity Risk Analyzer</h3>
-    <p>A simple tool to analyze basic cybersecurity risks using Python + Flask.</p>
-    <p>
-      <a href="https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer" target="_blank">
-        <img src="https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer/blob/main/Screenshot%20(189).png?raw=true" 
-             alt="Cybersecurity Risk Analyzer Screenshot" width="400">
-      </a>
-    </p>
-    <p>
-      <a href="https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer" target="_blank">
-        View on GitHub
-      </a>
-    </p>
-  </div>
+      <div class="project-card">
+        <h3>Cybersecurity Risk Analyzer</h3>
+        <p>A Python + Flask tool for basic cyber risk checking.</p>
+        <a class="btn" href="https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer" target="_blank">View GitHub</a>
+      </div>
 
-    <div class="project">
-  <h3>Expert of MIT App Inventor</h3>
-  <p>Many mobile apps was built using MIT App Inventor.</p>
-  <p><em>Note:</em> The project was created and tested but is no longer available for download. It remains a significant part of my early mobile app development journey.</p>
-</div>
+      <div class="project-card">
+        <h3>MIT App Inventor Apps</h3>
+        <p>A collection of early mobile apps built using MIT App Inventor.</p>
+      </div>
 
-</section>
+    </div>
+  </section>
 
-
-  <section id="research">
+  <!-- Research -->
+  <section id="research" class="section">
     <h2>Research Publications</h2>
-    <ul>
-      <li><strong>Aligning Information Systems and Business Processes in the Coffee Industry</strong> - <a href="https://ejournal.radenintan.ac.id/index.php/AISJ/article/view/23078/0" target="_blank">View Paper</a></li>
-      <li><strong>Digital Signal Processing for The Development of Deep Learning-Based Speech Recognition Technology</strong> - <a href="https://ejournal.radenintan.ac.id/index.php/IJECS/article/view/22918/0" target="_blank">View Paper</a></li>
-    </ul>
+
+    <div class="research-grid">
+
+      <div class="research-card">
+        <h3>Aligning Information Systems & Business Processes</h3>
+        <p>Coffee Industry — AIS Journal</p>
+        <a class="btn" href="https://ejournal.radenintan.ac.id/index.php/AISJ/article/view/23078/0" 
+           target="_blank">Read Paper</a>
+      </div>
+
+      <div class="research-card">
+        <h3>Digital Signal Processing for Speech Recognition</h3>
+        <p>Deep Learning — IJECS Journal</p>
+        <a class="btn" href="https://ejournal.radenintan.ac.id/index.php/IJECS/article/view/22918/0" 
+           target="_blank">Read Paper</a>
+      </div>
+
+    </div>
   </section>
 
-  <section id="contact">
+  <!-- Contact -->
+  <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Email: kmujeebullah37@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/mujeeb-ullah-khan-022084336" target="_blank">View Profile</a></p>
+    <p>Email: <span>kmujeebullah37@gmail.com</span></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mujeeb-ullah-khan-022084336" target="_blank">Profile</a></p>
     <p>GitHub: <a href="https://github.com/Mujeeb-Ullah-Khan" target="_blank">github.com/Mujeeb-Ullah-Khan</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Mujeeb Ullah Khan</p>
+    <p>&copy; 2025 Mujeeb Ullah Khan • All rights reserved.</p>
   </footer>
+
 </body>
 </html>
