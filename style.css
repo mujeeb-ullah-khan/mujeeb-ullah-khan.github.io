@@ -5,7 +5,7 @@ body {
   padding: 0;
   font-family: "Inter", sans-serif;
   color: #e7e7e7;
-  background: #0b0e16;
+  background: linear-gradient(135deg, #0f1b33 0%, #132645 40%, #0f1d3a 100%);
   overflow-x: hidden;
 }
 
