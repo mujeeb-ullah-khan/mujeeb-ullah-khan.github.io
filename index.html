@@ -2,152 +2,472 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mujeeb Ullah Khan | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MUJEEB ULLAH KHAN Portfolio </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <!-- Particle.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 </head>
-
 <body>
-  <!-- Background Tech Grid -->
-  <div class="tech-grid"></div>
+  <!-- Ambient Background -->
+  <div id="particles-js"></div>
 
-  <header class="header">
-    <h1 class="name">Mujeeb Ullah Khan</h1>
-    <p class="subtitle">Information Systems Student • Researcher • Technology Expert</p>
+  <!-- Floor Plan Navigation -->
+  <div class="floorplan" id="floorplan">
+    <button data-room="entrance" onclick="goToRoom('entrance')">
+      <span class="icon">🏠</span>
+      <span class="label">Home</span>
+    </button>
 
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <button data-room="projects" onclick="goToRoom('projects')">
+      <span class="icon">🖼️</span>
+      <span class="label">Projects</span>
+    </button>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      I am an Information Systems student who enjoys building things that actually work in the real world.
-I spend most of my time exploring web development, AI tools, cybersecurity, IoT, and anything that helps solve real problems.
+    <button data-room="skills" onclick="goToRoom('skills')">
+      <span class="icon">🛠️</span>
+      <span class="label">Skills</span>
+    </button>
 
-I work with HTML, CSS, JavaScript, PHP, Python, React, Node.js, and MySQL.
-I design clean interfaces in Figma, create visual dashboards, and experiment with data-driven tools.
+    <button data-room="education" onclick="goToRoom('education')">
+      <span class="icon">📚</span>
+      <span class="label">Education</span>
+    </button>
 
-I’ve built practical apps, 3D-style UI projects, chatbots, and contributed to peer-reviewed research.
-What I enjoy the most is taking an idea from scratch and turning it into something people can use and understand..
-    </p>
+    <button data-room="contact" onclick="goToRoom('contact')">
+      <span class="icon">📬</span>
+      <span class="label">Contact</span>
+    </button>
+  </div>
+
+  <!-- Entrance -->
+  <section class="room entrance visible">
+    <div class="intro">
+      <button class="avatar-btn" onclick="openAvatarModal()" aria-label="Open profile photo">
+        <img
+          class="avatar"
+          src="muk-profile-160.jpeg"
+          srcset="muk-profile-160.jpeg 1x, muk-profile-320.jpeg 2x"
+          alt="Muk, Information Systems student"
+          loading="lazy"
+          width="160"
+          height="160"
+        />
+        <div class="avatar-hover-effect">
+          <i class="fas fa-expand"></i>
+          <span>Click to enlarge</span>
+        </div>
+      </button>
+
+      <div class="intro-content">
+        <div class="badge">Information Systems Student</div>
+        <h1><span class="gradient-text">Welcome to Muk's</span><br><span class="portfolio-text">Portfolio</span></h1>
+
+        <p class="about">
+          I am an Information Systems student who enjoys building things that actually work in the real world. I spend most of my time exploring web development, AI tools, cybersecurity, IoT, and anything that helps solve real problems. I work with HTML, CSS, JavaScript, PHP, Python, React, Node.js, and MySQL. I design clean interfaces in Figma, create visual dashboards, and experiment with data-driven tools. I've built practical apps, 3D-style UI projects, chatbots, and contributed to peer-reviewed research. What I enjoy the most is taking an idea from scratch and turning it into something people can use and understand.
+        </p>
+
+        <div class="intro-actions">
+          <button class="cta-button" onclick="goToRoom('projects')">
+            <span>Explore My Work</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-
-    <div class="project-grid">
-
-      <div class="project-card">
-        <h3>MINI ERP SYSTEM</h3>
-        <p>MukERP is a modern PHP/MySQL‑based ERP system that streamlines inventory, sales, purchases, customers, and analytics into one smart dashboard.</p>
-        <a class="btn" href="https://mukerp.kesug.com/" target="_blank">Open Project</a>
-        <small style="display:block; margin-top:8px; color:#777;"> Published on InfinityFree for demo purposes only </small>
+  <!-- Avatar Modal -->
+  <div id="avatarModal" class="modal hidden">
+    <div class="modal-overlay" onclick="closeAvatarModal()"></div>
+    <div class="modal-content avatar-modal">
+      <button class="close-modal" onclick="closeAvatarModal()" aria-label="Close avatar modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 class="modal-title">Muk <span class="modal-subtitle">Information Systems Student</span></h3>
+      <div class="avatar-image-container">
+        <img src="muk-profile-640.jpeg" alt="Muk large" loading="lazy" class="modal-avatar" />
+        <div class="avatar-badge">
+          <i class="fas fa-code"></i> IT Expert
+        </div>
       </div>
+      <div class="modal-footer">
+        <p>Passionate about building practical solutions with modern technology</p>
+      </div>
+    </div>
+  </div>
 
-       <div class="project-card">
+ <!-- Projects Room -->
+<section class="room projects hidden">
+  <div class="room-header">
+    <h2><i class="fas fa-code-branch"></i> Projects Gallery</h2>
+    <p class="room-subtitle">Interactive showcase of my work</p>
+  </div>
+  
+  <div class="gallery">
+    <!-- Existing Projects -->
+    <!-- ERP System -->
+    <div class="frame-link" onclick="openExhibit('ERP System', 'A complete enterprise resource planning system built with PHP, MySQL, and JavaScript. Features inventory management, sales tracking, purchase orders, and automated reporting.', 'https://mukerp.kesug.com/')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">CSS</span>
+        </div>
+        <h3>ERP System</h3>
+        <p>Full-stack business management platform</p>
+        <p>Hosted on Infinityfree showing Unsafe.[Use Internet Explorer for Better Experiance]</p>
+        <div class="live-badge">
+          <i class="fas fa-external-link-alt"></i> Live Demo
+        </div>
+      </div>
+    </div>
+
+    <!-- E-Commerce Store -->
+    <div class="frame-link" onclick="openExhibit('E-Commerce Store', 'Modern online store with shopping cart, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.', 'https://your-ecommerce.netlify.app')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MongoDB</span>
+        </div>
+        <h3>E-Commerce Store</h3>
+        <p>Complete online retail solution</p>
+        <div class="live-badge">
+          <i class="fas fa-external-link-alt"></i> Live Demo
+        </div>
+      </div>
+    </div>
+
+    <!-- My First Website -->
+    <div class="frame-link" onclick="openExhibit('My First Website', 'My first website built during 2nd semester using HTML, CSS, and JavaScript. Features responsive design and interactive elements.', 'https://mujeeb-ullah-khan.github.io/Own-Website/')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
         <h3>My First Website</h3>
-        <p>My first successful website project.</p>
-        <a class="btn" href="https://mujeeb-ullah-khan.github.io/Own-Website/" target="_blank">Open Project</a>
+        <p>HTML, CSS, JavaScript</p>
+        <div class="live-badge">
+          <i class="fab fa-github"></i> View project
+        </div>
       </div>
-      
-      <div class="project-card">
+    </div>
+
+    <!-- AI Chatbot -->
+    <div class="frame-link" onclick="openExhibit('AI Chatbot', 'Intelligent chatbot using natural language processing for customer support and engagement.', 'https://github.com/mujeeb-ullah-khan/ai-chatbot')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">NLP</span>
+          <span class="tech-tag">AI</span>
+        </div>
+        <h3>AI Chatbot</h3>
+        <p>Natural language interface</p>
+        <div class="live-badge">
+          <i class="fas fa-external-link-alt"></i> View Project
+        </div>
+      </div>
+    </div>
+
+    <!-- New Projects -->
+    <!-- 3D Calculator -->
+    <div class="frame-link" onclick="openExhibit('3D Calculator', 'An immersive 3D calculator with realistic physics, animations, and advanced mathematical functions. Built using Three.js and HTML/CSS for a futuristic calculation experience.', 'https://mujeeb-ullah-khan.github.io/3D-Calculator/')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">Three.js</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
         <h3>3D Calculator</h3>
-        <p>A 3D-styled calculator using HTML, CSS, and JavaScript.</p>
-        <a class="btn" href="https://mujeeb-ullah-khan.github.io/3D-Calculator/" target="_blank">Open Project</a>
+        <p>Immersive 3D mathematical tool</p>
+        <div class="live-badge">
+          <i class="fas fa-cube"></i> 3D Experience
+        </div>
       </div>
+    </div>
 
-      <div class="project-card">
-        <h3>AI Chat Bot</h3>
-        <p>A react + node chatbot connected to AI APIs (OpenAI / HF).</p>
-        <a class="btn" href="https://github.com/mujeeb-ullah-khan/ai-chatbot" target="_blank">View GitHub</a>
-      </div>
-
-      <div class="project-card">
+    <!-- Weather App -->
+    <div class="frame-link" onclick="openExhibit('Weather App', 'Real-time weather forecasting application with beautiful UI, location-based forecasts, and interactive weather maps. Features 7-day forecasts and severe weather alerts.', 'https://mujeeb-ullah-khan.github.io/weather-App/')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-cloud-sun"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">API</span>
+          <span class="tech-tag">HTML/JavaScript</span>
+          <span class="tech-tag">CSS3</span>
+        </div>
         <h3>Weather App</h3>
-        <p>Live weather app using OpenWeatherMap API.</p>
-        <a class="btn" href="https://mujeeb-ullah-khan.github.io/weather-App/" target="_blank">Open App</a>
+        <p>Real-time weather forecasting</p>
+        <div class="live-badge">
+          <i class="fas fa-sun"></i> Live Web
+        </div>
       </div>
+    </div>
 
-       <div class="project-card">
-        <h3>Figma Application</h3>
-        <p>Example of my Designing through Figma</p>
-        <a class="btn" href="https://www.figma.com/design/tOS0l0k0SpOEC4KpQxwqqY/Donation?node-id=0-1&t=yd3BrWQnltd2fSTf-1" target="_blank">Open App</a>
+    <!-- Figma Design Application -->
+    <div class="frame-link" onclick="openExhibit('Figma Design Application', 'Complete UI/UX design tool with vector editing, prototyping, and collaboration features. Features component libraries and design systems management.', 'https://www.figma.com/design/tOS0l0k0SpOEC4KpQxwqqY/Donation?node-id=0-1&t=yd3BrWQnltd2fSTf-1')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fab fa-figma"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">Figma</span>
+          <span class="tech-tag">UI/UX</span>
+          <span class="tech-tag">Prototyping</span>
+        </div>
+        <h3>Figma Design Application</h3>
+        <p>UI/UX design & prototyping</p>
+        <div class="live-badge">
+          <i class="fas fa-paint-brush"></i> Application
+        </div>
       </div>
-      
-      <div class="project-card">
+    </div>
+
+    <!-- Smart Student Planner -->
+    <div class="frame-link" onclick="openExhibit('Smart Student Planner','assignment tracking, grade prediction, and study habit analytics.', 'https://mujeeb-ullah-khan.github.io/SmartStudentPlannerEditable/')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">AI</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">LocalStorage</span>
+        </div>
         <h3>Smart Student Planner</h3>
-        <p>A simple planner for managing student schedules.</p>
-        <a class="btn" href="https://mujeeb-ullah-khan.github.io/SmartStudentPlannerEditable/" target="_blank">Open Planner</a>
+        <p>Academic organizer</p>
+        <div class="live-badge">
+          <i class="fas fa-brain"></i> Application
+        </div>
       </div>
-
-      <div class="project-card">
-        <h3>Smart IoT Door Lock</h3>
-        <p>Arduino RFID door lock with Python serial interface.</p>
-        <a class="btn" href="https://mujeeb-ullah-khan.github.io/SmartIoTDoorLock/" target="_blank">Open Project</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Cybersecurity Risk Analyzer</h3>
-        <p>A Python + Flask tool for basic cyber risk checking.</p>
-        <a class="btn" href="https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer" target="_blank">View GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <h3>MIT App Inventor Apps</h3>
-        <p>A collection of early mobile apps built using MIT App Inventor.</p>
-      </div>
-
     </div>
+
+    <!-- Cybersecurity Risk Analyzer -->
+    <div class="frame-link" onclick="openExhibit('Cybersecurity Risk Analyzer', 'Comprehensive security assessment tool that analyzes network vulnerabilities, calculates risk scores, and provides mitigation strategies. Features threat intelligence integration.', 'https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer')">
+      <div class="frame">
+        <div class="frame-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="project-tech-tags">
+          <span class="tech-tag">Security</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Risk Analysis</span>
+        </div>
+        <h3>Cybersecurity Analyzer</h3>
+        <p>Security risk assessment tool</p>
+        <div class="live-badge">
+          <i class="fas fa-lock"></i> Security Tool
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Statistics -->
+  <div class="projects-stats">
+    <div class="stat-card">
+      <h3><i class="fas fa-layer-group"></i> Total Projects</h3>
+      <span class="stat-number">9</span>
+    </div>
+    <div class="stat-card">
+      <h3><i class="fas fa-code"></i> Tech Stack</h3>
+      <span class="stat-number">15+</span>
+    </div>
+    <div class="stat-card">
+      <h3><i class="fas fa-clock"></i> Ongoing</h3>
+      <span class="stat-number">3</span>
+    </div>
+    <div class="stat-card">
+      <h3><i class="fas fa-star"></i> Featured</h3>
+      <span class="stat-number">4</span>
+    </div>
+  </div>
+
+
+
+  <button class="next-room" onclick="goToRoom('skills')">
+    Next Room <i class="fas fa-arrow-right"></i>
+  </button>
+</section>
+
+  <!-- Skills Room -->
+  <section class="room skills hidden">
+    <div class="room-header">
+      <h2><i class="fas fa-tools"></i> Skills Exhibit</h2>
+      <p class="room-subtitle">Technologies & capabilities</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Frontend</h3>
+        <ul class="skill-list">
+          <li><i class="fab fa-html5"></i> HTML5 & CSS3</li>
+          <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
+          <li><i class="fab fa-react"></i> React.js</li>
+          <li><i class="fab fa-vuejs"></i> Vue.js</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-server"></i> Backend</h3>
+        <ul class="skill-list">
+          <li><i class="fab fa-php"></i> PHP & MySQL</li>
+          <li><i class="fab fa-node-js"></i> Node.js</li>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fas fa-database"></i> MySQL</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-magic"></i> Tools & Design</h3>
+        <ul class="skill-list">
+          <li><i class="fab fa-figma"></i> Figma</li>
+          <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+          <li><i class="fas fa-chart-bar"></i> Data Visualization</li>
+          <li><i class="fas fa-robot"></i> AI Tools</li>
+        </ul>
+      </div>
+    </div>
+    <button class="next-room" onclick="goToRoom('education')">
+      Next Room <i class="fas fa-arrow-right"></i>
+    </button>
   </section>
 
-  <!-- Research -->
-  <section id="research" class="section">
-    <h2>Research Publications</h2>
-
-    <div class="research-grid">
-
-      <div class="research-card">
-        <h3> Conceptual Model of Expert System Application for Halal Product Verification Using the Forward Chaining Method</h3>
-        <p>International Conference (ICHASTI) </p>
-        <a class="btn" href="https://ichasti.radenintan.ac.id/index.php/ichasti/article/view/49" 
-           target="_blank">Read Paper</a>
+  <!-- Education Room -->
+  <section class="room education hidden">
+    <div class="room-header">
+      <h2><i class="fas fa-graduation-cap"></i> Education Archive</h2>
+      <p class="room-subtitle">Academic journey & certifications</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2023 - Present</div>
+        <div class="timeline-content">
+          <h3>Bachelor's in Information Systems</h3>
+          <p>6th Semester • UIN Raden Intan Lampung</p>
+          <ul>
+            <li>Focus on Web, Data, Security</li>
+            <li>GPA: 3.75/4.00</li>
+            <li>Research in AI Applications</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="research-card">
-        <h3>Aligning Information Systems & Business Processes</h3>
-        <p>Coffee Industry — AIS Journal</p>
-        <a class="btn" href="https://ejournal.radenintan.ac.id/index.php/AISJ/article/view/23078/0" 
-           target="_blank">Read Paper</a>
+      <div class="timeline-item">
+        <div class="timeline-date">2022-2025</div>
+        <div class="timeline-content">
+          <h3>Certification and Online Courses
+          </h3>
+          <p>LLM •  Coursera</p>
+          <p>Software Engineering • Forage </p>
+          <p>Data Base • Dicoding Academy</p>
+          <p>Virtualization 101- VMware • TechKhwa</p>
+          <p>Advance Excel •  Coursera</p>
+          <ul>
+            <li>International Summer Course (University of Sumatera Utara)</li>
+            <li>English for Career Development (University of Pennsylvania) </li>
+            <li>Ethical AI Practices</li>
+          </ul>
+        </div>
       </div>
       
-      <div class="research-card">
-        <h3>Digital Signal Processing for Speech Recognition</h3>
-        <p>Deep Learning — IJECS Journal</p>
-        <a class="btn" href="https://ejournal.radenintan.ac.id/index.php/IJECS/article/view/22918/0" 
-           target="_blank">Read Paper</a>
-      </div>
+    <button class="next-room" onclick="goToRoom('contact')">Final Room<i class="fas fa-arrow-right"></i>
+    </button>
+  </section>
 
+  <!-- Contact Room -->
+  <section class="room contact hidden">
+    <div class="room-header">
+      <h2><i class="fas fa-envelope"></i> Contact Desk</h2>
+      <p class="room-subtitle">Let's build something amazing together</p>
     </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email</h3>
+        <p>mukmentors@gmail.com</p>
+        <button class="contact-action" onclick="copyToClipboard('muk@example.com')">Copy</button>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <h3>GitHub</h3>
+        <p>Github Account</p>
+        <button class="contact-action" onclick="window.open('https://github.com/mujeeb-ullah-khan', '_blank')">Visit</button>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <h3>LinkedIn</h3>
+        <p>linkedIn Account</p>
+        <button class="contact-action" onclick="window.open('https://www.linkedin.com/in/mujeeb-ullah-khan-022084336', '_blank')">Connect</button>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3>Resume</h3>
+        <p>Download my CV</p>
+        <button class="contact-action" onclick="downloadResume()">Download</button>
+      </div>
+    </div>
+    <button class="next-room" onclick="goToRoom('entrance')">
+      <i class="fas fa-home"></i> Back to Entrance
+    </button>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: <span>kmujeebullah37@gmail.com</span></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/mujeeb-ullah-khan-022084336" target="_blank">Profile</a></p>
-    <p>GitHub: <a href="https://github.com/Mujeeb-Ullah-Khan" target="_blank">github.com/Mujeeb-Ullah-Khan</a></p>
-  </section>
+  <!-- Exhibit Modal -->
+  <div id="exhibitModal" class="modal hidden">
+    <div class="modal-overlay" onclick="closeExhibit()"></div>
+    <div class="modal-content exhibit-modal">
+      <button class="close-modal" onclick="closeExhibit()" aria-label="Close exhibit modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-header">
+        <h2 id="exhibitTitle" class="modal-title"></h2>
+        <div id="exhibitCategory" class="modal-category"></div>
+      </div>
+      <div id="exhibitDetails" class="modal-body">
+        <!-- Project details will be inserted here -->
+      </div>
+      <div class="modal-footer">
+        <button class="modal-action-btn" onclick="viewProjectDetails()">
+          <i class="fas fa-external-link-alt"></i> View Details
+        </button>
+        <button class="modal-action-btn secondary" onclick="closeExhibit()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Mujeeb Ullah Khan • All rights reserved.</p>
-  </footer>
+  <!-- Notification Toast -->
+  <div id="toast" class="toast hidden">
+    <div class="toast-content">
+      <i class="fas fa-check-circle"></i>
+      <span id="toastMessage"></span>
+    </div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
