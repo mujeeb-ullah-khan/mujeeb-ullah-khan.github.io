@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MUJEEB ULLAH KHAN Portfolio </title>
+  <title>MUJEEB ULLAH KHAN Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <!-- Particle.js CDN -->
@@ -19,22 +19,18 @@
       <span class="icon">🏠</span>
       <span class="label">Home</span>
     </button>
-
     <button data-room="projects" onclick="goToRoom('projects')">
       <span class="icon">🖼️</span>
       <span class="label">Projects</span>
     </button>
-
     <button data-room="skills" onclick="goToRoom('skills')">
       <span class="icon">🛠️</span>
       <span class="label">Skills</span>
     </button>
-
     <button data-room="education" onclick="goToRoom('education')">
       <span class="icon">📚</span>
       <span class="label">Education</span>
     </button>
-
     <button data-room="contact" onclick="goToRoom('contact')">
       <span class="icon">📬</span>
       <span class="label">Contact</span>
@@ -98,216 +94,233 @@
     </div>
   </div>
 
- <!-- Projects Room -->
-<section class="room projects hidden">
-  <div class="room-header">
-    <h2><i class="fas fa-code-branch"></i> Projects Gallery</h2>
-    <p class="room-subtitle">Interactive showcase of my work</p>
-  </div>
-  
-  <div class="gallery">
-    <!-- Existing Projects -->
-    <!-- ERP System -->
-    <div class="frame-link" onclick="openExhibit('ERP System', 'A complete enterprise resource planning system built with PHP, MySQL, and JavaScript. Features inventory management, sales tracking, purchase orders, and automated reporting.', 'https://mukerp.kesug.com/')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-chart-line"></i>
+  <!-- Projects Room -->
+  <section class="room projects hidden">
+    <div class="room-header">
+      <h2><i class="fas fa-code-branch"></i> Projects Gallery</h2>
+      <p class="room-subtitle">Interactive showcase of my work</p>
+    </div>
+    
+    <div class="gallery">
+      
+      <div class="frame-link" onclick="openExhibit('Multimodal AI Chatbot', 'A full‑stack AI chatbot with image analysis powered by LLM and Llama 4 Vision. Built with React, Node.js, TypeScript, and Tailwind CSS. (Note:the first response sometimes late because of Hosting platform.).', 'https://multimodel-ai-bot.onrender.com')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">LLM</span>
+            <span class="tech-tag">Vision</span>
+          </div>
+          <h3>Multimodal AI Chatbot</h3>
+          <p>AI assistant that can chat and analyze images</p>
+          <div class="live-badge">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </div>
         </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">CSS</span>
+      </div>
+
+      <!-- Existing ERP System -->
+      <div class="frame-link" onclick="openExhibit('ERP System', 'A complete enterprise resource planning system built with PHP, MySQL, and JavaScript. Features inventory management, sales tracking, purchase orders, and automated reporting.', 'https://mukerp.kesug.com/')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CSS</span>
+          </div>
+          <h3>ERP System</h3>
+          <p>Full-stack business management platform</p>
+          <p>Hosted on Infinityfree showing Unsafe.[Use Internet Explorer for Better Experience]</p>
+          <div class="live-badge">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </div>
         </div>
-        <h3>ERP System</h3>
-        <p>Full-stack business management platform</p>
-        <p>Hosted on Infinityfree showing Unsafe.[Use Internet Explorer for Better Experiance]</p>
-        <div class="live-badge">
-          <i class="fas fa-external-link-alt"></i> Live Demo
+      </div>
+
+      <!-- E-Commerce Store -->
+      <div class="frame-link" onclick="openExhibit('E-Commerce Store', 'Live Demo: Static HTML/CSS/JS store for portfolio, For Full Stack Please Visit the Repository on GITHUB, Download the ZIP file. Built with React, Node.js, and PostgreSQL.', 'https://mujeeb-ullah-khan.github.io/MUK-commerce-Store/')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+          <h3>E-Commerce Store</h3>
+          <p>Complete online retail solution.(Note: Live demo is static. Full version requires Node.js and PostgreSQL to run locally.)</p>
+          <div class="live-badge">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </div>
+        </div>
+      </div>
+
+      <!-- My First Website -->
+      <div class="frame-link" onclick="openExhibit('My First Website', 'My first website built during 2nd semester using HTML, CSS, and JavaScript. Features responsive design and interactive elements.', 'https://mujeeb-ullah-khan.github.io/Own-Website/')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <h3>My First Website</h3>
+          <p>HTML, CSS, JavaScript</p>
+          <div class="live-badge">
+            <i class="fab fa-github"></i> View project
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Chatbot (old) -->
+      <div class="frame-link" onclick="openExhibit('AI Chatbot', 'Intelligent chatbot using natural language processing for customer support and engagement.', 'https://github.com/mujeeb-ullah-khan/ai-chatbot')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">AI</span>
+          </div>
+          <h3>AI Chatbot</h3>
+          <p>Natural language interface</p>
+          <div class="live-badge">
+            <i class="fas fa-external-link-alt"></i> View Project
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Calculator -->
+      <div class="frame-link" onclick="openExhibit('3D Calculator', 'An immersive 3D calculator with realistic physics, animations, and advanced mathematical functions. Built using Three.js and HTML/CSS for a futuristic calculation experience.', 'https://mujeeb-ullah-khan.github.io/3D-Calculator/')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Three.js</span>
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <h3>3D Calculator</h3>
+          <p>Immersive 3D mathematical tool</p>
+          <div class="live-badge">
+            <i class="fas fa-cube"></i> 3D Experience
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather App -->
+      <div class="frame-link" onclick="openExhibit('Weather App', 'Real-time weather forecasting application with beautiful UI, location-based forecasts, and interactive weather maps. Features 7-day forecasts and severe weather alerts.', 'https://mujeeb-ullah-khan.github.io/weather-App/')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">API</span>
+            <span class="tech-tag">HTML/JavaScript</span>
+            <span class="tech-tag">CSS3</span>
+          </div>
+          <h3>Weather App</h3>
+          <p>Real-time weather forecasting</p>
+          <div class="live-badge">
+            <i class="fas fa-sun"></i> Live Web
+          </div>
+        </div>
+      </div>
+
+      <!-- Figma Design Application -->
+      <div class="frame-link" onclick="openExhibit('Figma Design Application', 'Complete UI/UX design tool with vector editing, prototyping, and collaboration features. Features component libraries and design systems management.', 'https://www.figma.com/design/tOS0l0k0SpOEC4KpQxwqqY/Donation?node-id=0-1&t=yd3BrWQnltd2fSTf-1')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fab fa-figma"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Figma</span>
+            <span class="tech-tag">UI/UX</span>
+            <span class="tech-tag">Prototyping</span>
+          </div>
+          <h3>Figma Design Application</h3>
+          <p>UI/UX design & prototyping</p>
+          <div class="live-badge">
+            <i class="fas fa-paint-brush"></i> Application
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Student Planner -->
+      <div class="frame-link" onclick="openExhibit('Smart Student Planner','assignment tracking, grade prediction, and study habit analytics.', 'https://mujeeb-ullah-khan.github.io/SmartStudentPlannerEditable/')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">AI</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">LocalStorage</span>
+          </div>
+          <h3>Smart Student Planner</h3>
+          <p>Academic organizer</p>
+          <div class="live-badge">
+            <i class="fas fa-brain"></i> Application
+          </div>
+        </div>
+      </div>
+
+      <!-- Cybersecurity Risk Analyzer -->
+      <div class="frame-link" onclick="openExhibit('Cybersecurity Risk Analyzer', 'Comprehensive security assessment tool that analyzes network vulnerabilities, calculates risk scores, and provides mitigation strategies. Features threat intelligence integration.', 'https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer')">
+        <div class="frame">
+          <div class="frame-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Security</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Risk Analysis</span>
+          </div>
+          <h3>Cybersecurity Analyzer</h3>
+          <p>Security risk assessment tool</p>
+          <div class="live-badge">
+            <i class="fas fa-lock"></i> Security Tool
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- E-Commerce Store -->
-    <div class="frame-link" onclick="openExhibit('E-Commerce Store', 'Live Demo: Static HTML/CSS/JS store for portfolio, For Full Stack Please Visit the Repository on GITHUB, Download the ZIP file. Built with React, Node.js, and PostgreSQL.', 'https://mujeeb-ullah-khan.github.io/MUK-commerce-Store/')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-shopping-cart"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">PostgreSQL</span>
-        </div>
-        <h3>E-Commerce Store</h3>
-        <p>Complete online retail solution.(Note: Live demo is static. Full version requires Node.js and PostgreSQL to run locally.)</p>
-        <div class="live-badge">
-          <i class="fas fa-external-link-alt"></i> Live Demo
-        </div>
+    <!-- Project Statistics -->
+    <div class="projects-stats">
+      <div class="stat-card">
+        <h3><i class="fas fa-layer-group"></i> Total Projects</h3>
+        <span class="stat-number">10</span>
+      </div>
+      <div class="stat-card">
+        <h3><i class="fas fa-code"></i> Tech Stack</h3>
+        <span class="stat-number">20+</span>
+      </div>
+      <div class="stat-card">
+        <h3><i class="fas fa-clock"></i> Ongoing</h3>
+        <span class="stat-number">3</span>
+      </div>
+      <div class="stat-card">
+        <h3><i class="fas fa-star"></i> Featured</h3>
+        <span class="stat-number">5</span>
       </div>
     </div>
 
-    <!-- My First Website -->
-    <div class="frame-link" onclick="openExhibit('My First Website', 'My first website built during 2nd semester using HTML, CSS, and JavaScript. Features responsive design and interactive elements.', 'https://mujeeb-ullah-khan.github.io/Own-Website/')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-globe"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
-        <h3>My First Website</h3>
-        <p>HTML, CSS, JavaScript</p>
-        <div class="live-badge">
-          <i class="fab fa-github"></i> View project
-        </div>
-      </div>
-    </div>
-
-    <!-- AI Chatbot -->
-    <div class="frame-link" onclick="openExhibit('AI Chatbot', 'Intelligent chatbot using natural language processing for customer support and engagement.', 'https://github.com/mujeeb-ullah-khan/ai-chatbot')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-robot"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">NLP</span>
-          <span class="tech-tag">AI</span>
-        </div>
-        <h3>AI Chatbot</h3>
-        <p>Natural language interface</p>
-        <div class="live-badge">
-          <i class="fas fa-external-link-alt"></i> View Project
-        </div>
-      </div>
-    </div>
-
-    <!-- New Projects -->
-    <!-- 3D Calculator -->
-    <div class="frame-link" onclick="openExhibit('3D Calculator', 'An immersive 3D calculator with realistic physics, animations, and advanced mathematical functions. Built using Three.js and HTML/CSS for a futuristic calculation experience.', 'https://mujeeb-ullah-khan.github.io/3D-Calculator/')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-calculator"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">Three.js</span>
-          <span class="tech-tag">HTML/CSS</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
-        <h3>3D Calculator</h3>
-        <p>Immersive 3D mathematical tool</p>
-        <div class="live-badge">
-          <i class="fas fa-cube"></i> 3D Experience
-        </div>
-      </div>
-    </div>
-
-    <!-- Weather App -->
-    <div class="frame-link" onclick="openExhibit('Weather App', 'Real-time weather forecasting application with beautiful UI, location-based forecasts, and interactive weather maps. Features 7-day forecasts and severe weather alerts.', 'https://mujeeb-ullah-khan.github.io/weather-App/')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-cloud-sun"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">API</span>
-          <span class="tech-tag">HTML/JavaScript</span>
-          <span class="tech-tag">CSS3</span>
-        </div>
-        <h3>Weather App</h3>
-        <p>Real-time weather forecasting</p>
-        <div class="live-badge">
-          <i class="fas fa-sun"></i> Live Web
-        </div>
-      </div>
-    </div>
-
-    <!-- Figma Design Application -->
-    <div class="frame-link" onclick="openExhibit('Figma Design Application', 'Complete UI/UX design tool with vector editing, prototyping, and collaboration features. Features component libraries and design systems management.', 'https://www.figma.com/design/tOS0l0k0SpOEC4KpQxwqqY/Donation?node-id=0-1&t=yd3BrWQnltd2fSTf-1')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fab fa-figma"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">Figma</span>
-          <span class="tech-tag">UI/UX</span>
-          <span class="tech-tag">Prototyping</span>
-        </div>
-        <h3>Figma Design Application</h3>
-        <p>UI/UX design & prototyping</p>
-        <div class="live-badge">
-          <i class="fas fa-paint-brush"></i> Application
-        </div>
-      </div>
-    </div>
-
-    <!-- Smart Student Planner -->
-    <div class="frame-link" onclick="openExhibit('Smart Student Planner','assignment tracking, grade prediction, and study habit analytics.', 'https://mujeeb-ullah-khan.github.io/SmartStudentPlannerEditable/')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-calendar-check"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">AI</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">LocalStorage</span>
-        </div>
-        <h3>Smart Student Planner</h3>
-        <p>Academic organizer</p>
-        <div class="live-badge">
-          <i class="fas fa-brain"></i> Application
-        </div>
-      </div>
-    </div>
-
-    <!-- Cybersecurity Risk Analyzer -->
-    <div class="frame-link" onclick="openExhibit('Cybersecurity Risk Analyzer', 'Comprehensive security assessment tool that analyzes network vulnerabilities, calculates risk scores, and provides mitigation strategies. Features threat intelligence integration.', 'https://github.com/mujeeb-ullah-khan/CybersecurityRiskAnalyzer')">
-      <div class="frame">
-        <div class="frame-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <div class="project-tech-tags">
-          <span class="tech-tag">Security</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Risk Analysis</span>
-        </div>
-        <h3>Cybersecurity Analyzer</h3>
-        <p>Security risk assessment tool</p>
-        <div class="live-badge">
-          <i class="fas fa-lock"></i> Security Tool
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project Statistics -->
-  <div class="projects-stats">
-    <div class="stat-card">
-      <h3><i class="fas fa-layer-group"></i> Total Projects</h3>
-      <span class="stat-number">9</span>
-    </div>
-    <div class="stat-card">
-      <h3><i class="fas fa-code"></i> Tech Stack</h3>
-      <span class="stat-number">15+</span>
-    </div>
-    <div class="stat-card">
-      <h3><i class="fas fa-clock"></i> Ongoing</h3>
-      <span class="stat-number">3</span>
-    </div>
-    <div class="stat-card">
-      <h3><i class="fas fa-star"></i> Featured</h3>
-      <span class="stat-number">4</span>
-    </div>
-  </div>
-
-
-
-  <button class="next-room" onclick="goToRoom('skills')">
-    Next Room <i class="fas fa-arrow-right"></i>
-  </button>
-</section>
+    <button class="next-room" onclick="goToRoom('skills')">
+      Next Room <i class="fas fa-arrow-right"></i>
+    </button>
+  </section>
 
   <!-- Skills Room -->
   <section class="room skills hidden">
@@ -371,23 +384,21 @@
       <div class="timeline-item">
         <div class="timeline-date">2022-2025</div>
         <div class="timeline-content">
-          <h3>Certification and Online Courses
-          </h3>
-          <p>LLM •  Coursera</p>
-          <p>Software Engineering • Forage </p>
+          <h3>Certification and Online Courses</h3>
+          <p>LLM • Coursera</p>
+          <p>Software Engineering • Forage</p>
           <p>Data Base • Dicoding Academy</p>
           <p>Virtualization 101- VMware • TechKhwa</p>
-          <p>Advance Excel •  Coursera</p>
+          <p>Advance Excel • Coursera</p>
           <ul>
             <li>International Summer Course (University of Sumatera Utara)</li>
-            <li>English for Career Development (University of Pennsylvania) </li>
+            <li>English for Career Development (University of Pennsylvania)</li>
             <li>Ethical AI Practices</li>
           </ul>
         </div>
       </div>
-      
-    <button class="next-room" onclick="goToRoom('contact')">Final Room<i class="fas fa-arrow-right"></i>
-    </button>
+    </div>
+    <button class="next-room" onclick="goToRoom('contact')">Final Room<i class="fas fa-arrow-right"></i></button>
   </section>
 
   <!-- Contact Room -->
