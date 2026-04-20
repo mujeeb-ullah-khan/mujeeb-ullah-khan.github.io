@@ -1148,3 +1148,12 @@ body::before {
 .floorplan button.active .label {
   font-weight: 600;
 }
+/* Video inside modal */
+.modal-body video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
