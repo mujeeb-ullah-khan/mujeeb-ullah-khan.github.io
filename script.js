@@ -1,4 +1,4 @@
-// ===== Portfolio Museum - Enhanced Script =====
+// ===== Portfolio Museum - Enhanced Script (with Video Support) =====
 
 // Initialize state
 let currentRoom = 'entrance';
@@ -7,6 +7,7 @@ let currentProjectData = {
     title: '',
     description: '',
     link: '',
+    videoUrl: null,      // NEW: store video URL
     category: '',
     technologies: []
 };
@@ -145,12 +146,14 @@ function openAvatarModal() {
     }
 }
 
-function openExhibit(title, description, link = '#') {
-    // Store the project data
+// UPDATED: openExhibit now supports videoUrl (MP4 path or YouTube link)
+function openExhibit(title, description, link = '#', videoUrl = null) {
+    // Store the project data including video
     currentProjectData = {
         title: title,
         description: description,
         link: link,
+        videoUrl: videoUrl,
         category: getCategoryFromTitle(title),
         technologies: []
     };
@@ -161,9 +164,51 @@ function openExhibit(title, description, link = '#') {
     const categoryEl = document.getElementById('exhibitCategory');
     
     if (modal && titleEl && detailsEl) {
-        // Set content
+        // Set title
         titleEl.textContent = title;
-        detailsEl.textContent = description;
+        
+        // Build HTML content with description and video
+        let detailsHtml = `<p style="margin-bottom: 1rem;">${description}</p>`;
+        
+        // Add video player if videoUrl is provided
+        if (videoUrl) {
+            // Check if it's a YouTube link
+            if (videoUrl.includes('youtube.com/watch?v=') || videoUrl.includes('youtu.be/')) {
+                let videoId = '';
+                if (videoUrl.includes('youtube.com/watch?v=')) {
+                    videoId = videoUrl.split('v=')[1].split('&')[0];
+                } else if (videoUrl.includes('youtu.be/')) {
+                    videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                }
+                if (videoId) {
+                    detailsHtml += `<div style="margin: 1rem 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                                                src="https://www.youtube.com/embed/${videoId}" 
+                                                frameborder="0" allowfullscreen></iframe>
+                                     </div>`;
+                } else {
+                    detailsHtml += `<video controls style="width:100%; border-radius:12px; margin: 1rem 0;">
+                                        <source src="${videoUrl}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>`;
+                }
+            } else {
+                // Assume it's a local MP4 file
+                detailsHtml += `<video controls style="width:100%; border-radius:12px; margin: 1rem 0;">
+                                    <source src="${videoUrl}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>`;
+            }
+        }
+        
+        // Add a link to the project (optional, but keep it)
+        detailsHtml += `<div style="margin-top: 1.5rem;">
+                            <a href="${link}" target="_blank" style="color: #6c63ff; text-decoration: none; font-weight: bold;">
+                                <i class="fas fa-external-link-alt"></i> View Project →
+                            </a>
+                        </div>`;
+        
+        detailsEl.innerHTML = detailsHtml;
         
         // Set category
         if (categoryEl) {
@@ -185,9 +230,15 @@ function getCategoryFromTitle(title) {
         'E-Commerce Store': 'Web Application',
         'My First Website': 'Frontend Development',
         'AI Chatbot': 'Artificial Intelligence',
-        'Mini ERP System': 'Business Management'
+        'Mini ERP System': 'Business Management',
+        'Multimodal AI Chatbot': 'Artificial Intelligence',
+        'IoT Smart Home Dashboard': 'Internet of Things',
+        '3D Calculator': 'Interactive 3D',
+        'Weather App': 'API Integration',
+        'Figma Design Application': 'UI/UX Design',
+        'Smart Student Planner': 'Productivity Tool',
+        'Cybersecurity Analyzer': 'Security Tool'
     };
-    
     return categories[title] || 'Project';
 }
 
@@ -409,4 +460,4 @@ document.querySelectorAll('.room').forEach(room => {
 });
 
 // Console log
-console.log('✨ Portfolio script loaded successfully');
+console.log('✨ Portfolio script loaded successfully (with video support)');
